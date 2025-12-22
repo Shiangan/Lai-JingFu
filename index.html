@@ -20,9 +20,9 @@
         }
 
         :root {
-            --paper: #f7f2ed; /* 極致奶茶色 */
-            --ink: #3d3630;   /* 暖深棕墨色 */
-            --gold: #b4977a;  /* 香檳金 */
+            --paper: #f7f2ed; /* 質感奶茶色 */
+            --ink: #3d3630;   /* 深咖啡墨色 */
+            --gold: #b4977a;  /* 質感金 */
             --sub-ink: #7a7169;
             --seal-red: #a52a2a;
             --max-w: 480px;
@@ -39,12 +39,12 @@
         .app-wrapper { 
             width: 100%; max-width: var(--max-w); margin: 0 auto; position: relative; 
             background-color: var(--paper); 
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* 微紋理 */
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); 
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
             min-height: 100vh;
         }
 
-        /* 背景浮水印 */
+        /* 浮水印 */
         .bg-watermark {
             position: fixed; bottom: 12%; left: 50%; transform: translateX(-50%);
             font-size: clamp(80px, 18vw, 110px); font-weight: 900;
@@ -52,8 +52,7 @@
             z-index: 0; pointer-events: none; white-space: nowrap; text-transform: uppercase;
         }
 
-        /* 頂部導航 */
-        .header-top { text-align: center; padding: 50px 20px 20px; position: relative; z-index: 2; }
+        header { text-align: center; padding: 50px 20px 20px; position: relative; z-index: 2; }
         .top-logo { width: 100px; opacity: 0.85; margin-bottom: 20px; }
         .top-action-bar { display: flex; justify-content: center; gap: 12px; }
         .top-btn { 
@@ -63,7 +62,6 @@
             color: var(--sub-ink); backdrop-filter: blur(5px);
         }
 
-        /* 區塊轉場動畫 */
         section { 
             padding: 70px 22px; width: 100%; position: relative; z-index: 1; 
             opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); 
@@ -72,7 +70,7 @@
 
         .section-title { font-size: 15px; letter-spacing: 8px; color: var(--gold); font-weight: 700; margin-bottom: 40px; text-align: center; display: block; }
         
-        /* 照片畫框質感 */
+        /* 遺像裝飾 */
         .img-inner { 
             display: block; max-width: 90%; margin: 0 auto; height: auto; 
             cursor: pointer; border-radius: 2px; 
@@ -80,11 +78,10 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.07); 
         }
         
-        /* 姓名與年份 */
         .name-hero { font-size: clamp(38px, 11vw, 50px); font-weight: 900; letter-spacing: 0.2em; margin: 20px 0; text-align: center; }
         .year-label { font-size: 13px; letter-spacing: 6px; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
 
-        /* 時間資訊卡片 */
+        /* 時間資訊 */
         .date-hero { font-size: clamp(70px, 18vw, 85px); font-weight: 900; line-height: 1; text-align: center; color: var(--ink); margin-top: 10px; }
         .date-sub { text-align: center; font-size: 14px; letter-spacing: 2px; color: var(--sub-ink); }
         
@@ -101,7 +98,7 @@
         .notice-item { font-size: 13px; color: var(--sub-ink); margin-bottom: 12px; display: flex; align-items: flex-start; line-height: 1.6; }
         .notice-item::before { content: "◆"; color: var(--gold); margin-right: 10px; font-size: 10px; margin-top: 2px; }
 
-        /* 書法詩詞動效 */
+        /* 書法詩詞 */
         .calligraphy-area { padding: 100px 10px; width: 100%; display: flex; justify-content: center; position: relative; z-index: 2; overflow: hidden; }
         .ink-wrap { display: flex; flex-direction: row-reverse; justify-content: center; width: 95%; max-width: 420px; height: 520px; }
         .ink-line { 
@@ -113,7 +110,6 @@
         .ink-anim { animation: inkFadeIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
         @keyframes inkFadeIn { 0% { opacity: 0; filter: blur(12px); transform: translateY(-10px); } 100% { opacity: 1; filter: blur(0); transform: translateY(0); } }
 
-        /* 按鈕群組 */
         .btn-action { display: block; width: 100%; padding: 18px; border: 1.5px solid var(--gold); color: var(--gold); text-align: center; text-decoration: none; font-size: 14px; letter-spacing: 4px; font-weight: 700; margin-top: 30px; border-radius: 4px; transition: 0.3s; }
         .btn-action:active { background: var(--gold); color: #fff; }
         
@@ -140,7 +136,7 @@
 <div class="app-wrapper">
     <div class="bg-watermark">MEMORY</div>
 
-    <header class="header-top">
+    <header>
         <img src="image/logo.png" class="top-logo">
         <div class="top-action-bar">
             <a href="javascript:void(0)" class="top-btn" onclick="copyText()">
@@ -160,11 +156,11 @@
                 <div class="name-hero">賴鏡孚 <span style="font-size: 20px; font-weight: 400; letter-spacing: 2px;">先生</span></div>
                 <p style="font-size: 15px; color: var(--ink); line-height: 2.8; letter-spacing: 1.8px; margin-top: 30px; padding: 0 15px;">
                     我們最敬愛的 <span style="font-weight: 700; border-bottom: 1.5px solid var(--gold);">賴鏡孚 先生</span><br>
-                    於 民國 114 年 12 月 21 日<br>
+                    於 民國 114 年 12 月 20 日<br>
                     在家人的陪伴與守護下，安詳離世<br>
                     化作星辰，守護著他最愛的人。<br><br>
                     謹擇於 <span style="color: var(--gold); font-weight: 700;">民國115年01月10日（星期六）</span><br>
-                    台北市立殯儀館 ［至愛三廳］<br>
+                    台北市立殯儀館 ［ 至愛三廳 ］<br>
                     舉辦追思告別奠禮<br><br>
                     敬邀您 一同參與鏡孚先生的畢業典禮
                 </p>
@@ -196,8 +192,9 @@
 
             <div class="notice-card">
                 <div class="notice-item">請著整齊、樸素服飾以表敬意。</div>
-                <div class="notice-item">儀式期間，請將手機調至靜音模式。</div>
-                <div class="notice-item">會場備有平安禮，請與工作人員示意領取。</div>
+                <div class="notice-item">儀式期間，請將手機關機或調至靜音模式。</div>
+                <div class="notice-item">至殯儀館，不互道「再見」，以「平安」代替。</div>
+                <div class="notice-item">若因宗教信仰不持香，與工作人員示意即可。</div>
             </div>
 
             <a href="javascript:void(0)" class="btn-action" onclick="addCal()">加入手機行事曆提醒</a>
@@ -212,21 +209,27 @@
         <section class="reveal">
             <span class="section-title">會場位置與交通</span>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
-                <img src="image/祥安資訊-板殯.png" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
-                <img src="image/IMG_9337.PNG" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00001.GIF" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00002.GIF" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00003.GIF" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00004.GIF" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00005.PNG" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00006.PNG" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00007.PNG" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
+                <img src="image/交通00008.PNG" style="width:100%; border-radius: 4px;" onclick="zoom(this.src)">
             </div>
-            <a href="http://maps.google.com/?q=台北市立殯儀館" target="_blank" class="btn-action" style="border-color:#d1c4b9; color:#8e8276;">📍 開啟 Google 地圖導航</a>
+            <a href="https://maps.app.goo.gl/台北市立殯儀館" target="_blank" class="btn-action" style="border-color:#d1c4b9; color:#8e8276;">📍 開啟 Google 地圖導航</a>
         </section>
 
         <div class="calligraphy-area" id="thanksSec">
             <div class="ink-wrap">
-                <div class="ink-line" style="animation-delay: 0.5s;">致 每一位溫暖的您</div>
-                <div class="ink-line" style="animation-delay: 2s;">謝謝這段日子的關懷與陪伴</div>
-                <div class="ink-line" style="animation-delay: 3.5s;">每一句問候 每一份情誼</div>
-                <div class="ink-line" style="animation-delay: 5s;">就像是穿透雲層的微光</div>
-                <div class="ink-line" style="animation-delay: 6.5s;">溫柔地照亮了這份思念</div>
-                <div class="ink-line" style="animation-delay: 8s;">這份真誠厚情 永誌於心</div>
-                <div class="ink-line ink-last-line" style="animation-delay: 9.5s;">
+                <div class="ink-line">致 每一位溫暖的您</div>
+                <div class="ink-line">謝謝這段日子的關懷與陪伴</div>
+                <div class="ink-line">每一句問候 每一份情誼</div>
+                <div class="ink-line">就像是穿透雲層的微光</div>
+                <div class="ink-line">溫柔地照亮了這份思念</div>
+                <div class="ink-line">這份真誠厚情 永誌於心</div>
+                <div class="ink-line ink-last-line">
                     家屬 <b style="border-bottom: 2px solid var(--gold);">全體家眷</b> 叩謝
                 </div>
             </div>
@@ -269,55 +272,50 @@
 <div id="lightbox" onclick="this.style.display='none'"><img id="lbi" src=""></div>
 
 <script>
-    // 滾動偵測與動畫觸發
+    // 滾動與動畫
     const obs = new IntersectionObserver(es => es.forEach(e => {
         if(e.isIntersecting) {
             e.target.classList.add('visible');
             if(e.target.id === 'thanksSec') {
-                e.target.querySelectorAll('.ink-line').forEach(l => l.classList.add('ink-anim'));
+                e.target.querySelectorAll('.ink-line').forEach((l, i) => {
+                    setTimeout(() => l.classList.add('ink-anim'), i * 1500);
+                });
             }
         }
     }), {threshold: 0.1});
     document.querySelectorAll('section, .calligraphy-area').forEach(s => obs.observe(s));
 
-    // 音樂自動播放策略 (瀏覽器限制：需互動後播放)
+    // 音樂控制 (修正邏輯確保必播)
     const bgm = document.getElementById('bgm');
     const startM = () => { 
         if(bgm.paused){ 
-            bgm.volume = 0.3; 
-            bgm.play().catch(() => {
-                // 如果自動播放被擋下，則靜默失敗，等待下一次點擊
-            }); 
+            bgm.volume = 0.4; 
+            bgm.play().catch(() => {}); 
         } 
     };
-    // 監聽所有可能的互動來啟動音樂
     ['click', 'touchstart', 'scroll', 'mousedown'].forEach(e => {
         document.addEventListener(e, startM, {once: true});
     });
 
-    // 圖片放大功能
     function zoom(src) { 
         document.getElementById('lbi').src = src; 
         document.getElementById('lightbox').style.display = 'flex'; 
     }
     
-    // 複製奠禮資訊
     function copyText() {
         const info = "【追思奠禮 ‧ 賴鏡孚 先生】\n\n奠禮日期：2026年01月10日 (六)\n地點：台北市立殯儀館 至愛三廳\n家奠：09:50 / 公奠：10:30\n安靈地點：台北市殯 景行樓3F 蓮位堂 [I1-01]";
         if (navigator.clipboard) {
-            navigator.clipboard.writeText(info).then(() => alert("奠禮資訊已複製到您的剪貼簿。"));
+            navigator.clipboard.writeText(info).then(() => alert("奠禮資訊已複製。"));
         } else {
             const ta = document.createElement("textarea"); ta.value = info; document.body.appendChild(ta);
             ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-            alert("奠禮資訊已複製到您的剪貼簿。");
+            alert("奠禮資訊已複製。");
         }
     }
 
-    // 加入行事曆
     function addCal() { 
         const title = encodeURIComponent("【追思】賴鏡孚 先生 告別奠禮");
         const loc = encodeURIComponent("台北市立殯儀館 至愛三廳");
-        // 設定為台灣標準時間 2026/01/10 09:50-11:30
         window.open(`https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260110T015000Z/20260110T033000Z&location=${loc}&details=家奠09:50+公奠10:30`); 
     }
 </script>
